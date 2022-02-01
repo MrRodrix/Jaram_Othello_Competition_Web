@@ -2,8 +2,14 @@ import React from "react";
 
 import "./Othello.scss";
 
-const Othello = ({ room_id, player, turn, board }) => {
+const Othello = ({ socket, room_id, player, turn, board }) => {
   // arr[8][8]
+
+  const PutStone = (x, y) => {
+    if (turn === socket.id) {
+      socket.emit("put_stone", { x, y });
+    }
+  };
   return (
     <div>
       <table>
@@ -14,6 +20,7 @@ const Othello = ({ room_id, player, turn, board }) => {
                 {i.map((j, idx2) => {
                   return (
                     <td
+                      onClick={() => PutStone(idx, idx2)}
                       className={"board_color_" + ((idx + idx2) % 2)}
                       key={idx2}>
                       <div
