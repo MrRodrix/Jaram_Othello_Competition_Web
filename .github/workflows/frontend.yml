@@ -13,7 +13,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      working-directory: ./WEB(FE)
+      working-directory: ./
     
     steps:
     - name: Checkout code
