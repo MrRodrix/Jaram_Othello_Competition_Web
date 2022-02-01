@@ -11,13 +11,6 @@ const RoomInfo = ({ socket, room_id, room_status, player, spectator }) => {
    *     player[[id,isready]...],
    *     spectator[...]
    * }
-   * game_info :
-   * {
-   *     room_id,
-   *     player[[id,isready]...],
-   *     turn,
-   *     board[8][8]
-   * }
    */
   return (
     <div>
