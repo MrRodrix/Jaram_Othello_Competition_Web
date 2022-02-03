@@ -16,7 +16,7 @@ function Router() {
   const [room_list, setRoomList] = useState([]);
   const [info, setInfo] = useState({
     room_info: { room_id: "", room_status: "", player: [], spectator: [] },
-    game_info: { room_id: "", player: [], turn: "", board: [] },
+    game_info: { room_id: "", player: [], turn: "", board: [], placeable: [] },
   });
 
   useEffect(() => {

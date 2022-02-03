@@ -2,12 +2,18 @@ import React from "react";
 
 import "./Othello.scss";
 
-const Othello = ({ socket, room_id, player, turn, board }) => {
+const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
   // arr[8][8]
-
+  
   const PutStone = (x, y) => {
+    console.log(placeable);
     if (turn === socket.id) {
-      socket.emit("put_stone", { x, y });
+      for(let index = 0; index < placeable[0].length; index++){
+        if((placeable[0][index][0] === x) && (placeable[0][index][1] === y)){
+          socket.emit("put_stone", { index });
+          return;
+        }
+      }
     }
   };
   return (
