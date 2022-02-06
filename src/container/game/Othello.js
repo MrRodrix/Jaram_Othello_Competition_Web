@@ -6,7 +6,6 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
   // arr[8][8]
   
   const PutStone = (x, y) => {
-    console.log(placeable);
     if (turn === socket.id) {
       for(let index = 0; index < placeable[0].length; index++){
         if((placeable[0][index][0] === x) && (placeable[0][index][1] === y)){
@@ -24,20 +23,18 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
             return (
               <tr key={idx}>
                 {i.map((j, idx2) => {
+                  console.log(placeable);
+                  console.log(j)
                   return (
                     <td
                       onClick={() => PutStone(idx, idx2)}
-                      className={"board_color_" + ((idx + idx2) % 2)}
+                      className={"board_color_" + ((idx + idx2) % 2)+" "}
                       key={idx2}>
                       <div
-                        className={
-                          j === -1
-                            ? ""
-                            : j === 0
-                            ? "black"
-                            : j === 1
-                            ? "white"
-                            : "err"
+                        className={placeable.length > 0 ?
+                           ((placeable[0].some(([x,y]) => x === idx && y === idx2 && turn === socket.id) ? "placeable" :"") +
+                            (j === 0 ? "black" : "") +
+                            (j === 1 ? "white" : "")):""
                         }
                       />
                     </td>
