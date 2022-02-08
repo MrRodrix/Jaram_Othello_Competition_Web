@@ -41,7 +41,7 @@ function Router() {
         default:
           console.log("command not found", info.command);
       }
-    });
+    });// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
