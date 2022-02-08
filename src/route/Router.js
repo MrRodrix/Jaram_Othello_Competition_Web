@@ -8,7 +8,9 @@ import RoomContainer from "container/room/RoomContainer";
 
 import { API_URL } from "_variables.js";
 
-const socket = io.connect(API_URL, { transports: ["websocket"] });
+const socket = io.connect(API_URL,{
+  cors: { origin: '*' }
+});
 
 function Router() {
   const navigate = useNavigate();

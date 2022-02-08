@@ -1,9 +1,9 @@
 const production = {
-  API_URL: "ws://localhost:3000",
+  API_URL: "http://localhost:3000",
 };
 
 const development = {
-  API_URL: "ws://localhost:3000",
+  API_URL: "http://localhost:3000",
 };
 
 module.exports =
