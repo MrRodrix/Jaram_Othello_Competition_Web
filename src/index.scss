@@ -1,5 +1,9 @@
 @import "_variables.scss";
 
+// body {
+//   background: gray;
+// }
+
 /* scroll */
 ::-webkit-scrollbar {
   width: 5px;
@@ -36,24 +40,11 @@ code {
     monospace;
 }
 
-#root {
-  height: 100%;
-  display: flex;
-}
-
-.main_container {
-  height: 100%;
-}
-
-.login_container {
-  height: 100%;
-  width: 100%;
-}
-
-.join_container {
-  height: 100%;
-  width: 100%;
-}
+// #root {
+//   height: 100%;
+//   wi
+//   display: flex;
+// }
 
 
 /* Loding */

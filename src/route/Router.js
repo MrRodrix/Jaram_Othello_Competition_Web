@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import io from "socket.io-client";
+import { Grid } from "@mui/material";
 
 import GameContainer from "container/game/GameContainer";
 import RoomContainer from "container/room/RoomContainer";
@@ -24,7 +25,6 @@ function Router() {
       let room_id = location.pathname.replaceAll("/game/", "");
       socket.emit("join_room", { room_id });
     }
-    console.log("useEffect");
     socket.on("command", (info) => {
       console.log("Server From Client : ", info);
       switch (info.command) {
@@ -43,8 +43,7 @@ function Router() {
   }, []);
 
   return (
-    <div>
-      <div> 내 ID : {socket.id} </div>
+    <Grid container justifyContent="center" alignItems="center">
       <Routes>
         <Route
           path="/*"
@@ -55,7 +54,7 @@ function Router() {
           element={<GameContainer socket={socket} {...info} />}
         />
       </Routes>
-    </div>
+    </Grid>
   );
 }
 

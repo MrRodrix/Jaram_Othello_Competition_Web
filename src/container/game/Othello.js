@@ -17,18 +17,16 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
   };
   return (
     <div>
-      <table>
+      <table className="Othello_table">
         <tbody>
           {board.map((i, idx) => {
             return (
               <tr key={idx}>
                 {i.map((j, idx2) => {
-                  console.log(placeable);
-                  console.log(j)
                   return (
                     <td
                       onClick={() => PutStone(idx, idx2)}
-                      className={"board_color_" + ((idx + idx2) % 2)+" "}
+                      className={"Othello_td board_color_" + ((idx + idx2) % 2)+" "}
                       key={idx2}>
                       <div
                         className={placeable.length > 0 ?
