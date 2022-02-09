@@ -31,7 +31,7 @@ function Router() {
       console.log("Server From Client : ", info);
       switch (info.command) {
         case "update_room":
-          setRoomList(info.room_list);
+          setRoomList(info.room_list.reverse());
           navigate("/room");
           break;
         case "room_info":
