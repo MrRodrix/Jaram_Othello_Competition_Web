@@ -1,4 +1,5 @@
 import React from "react";
+import { Grid } from '@mui/material';
 
 import "./Othello.scss";
 
@@ -16,7 +17,8 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
     }
   };
   return (
-    <div>
+    <Grid container direction="column"alignItems="center" justifyContent="center" columns={2}>
+      <Grid item xs={2}>
       <table className="Othello_table">
         <tbody>
           {board.map((i, idx) => {
@@ -43,7 +45,8 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
           })}
         </tbody>
       </table>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 

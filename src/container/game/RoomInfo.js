@@ -30,19 +30,21 @@ const RoomInfo = ({ socket, room_id, room_status, player, spectator, turn}) => {
         </Button> : ""
       )} </h1> 
       <Divider>Player</Divider>
-      <Grid container columns={16}>
+      <Grid container columns={2}>
         {player.map(([id, isready], idx) => (
-          <Grid key={idx} item xs={8}>
+          <Grid item key={idx} xs={1}>
             <Chip color={id===turn?"primary":"default"} label={id} icon={isready ? <Done/> : <Close/>} variant={id === socket.id ? "" : "outlined"}/>
           </Grid>
         ))}    
       </Grid>
-
-
       <Divider>Spectator</Divider>
-        {spectator.map((id, idx) => (
-            <Chip label={id} variant={id === socket.id ? "" : "outlined"}key={idx} />
+      <Grid container columns={2}>
+          {spectator.map((id, idx) => (
+            <Grid item key={idx} xs={1}>
+              <Chip label={id} variant={id === socket.id ? "" : "outlined"}key={idx} />
+            </Grid>
           ))}
+      </Grid>
       </Paper>
   );
 };
