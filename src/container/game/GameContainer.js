@@ -25,7 +25,7 @@ const GameContainer = ({ socket, room_info, game_info }) => {
   return (
     <div>
       <h1 style={{textAlign: "center"}}>
-        자람 오델로 대전 🏆 
+        자람 오델로 AI 대전 🏆 
       </h1>
       <Paper elevation={5} justifyContent="center" style={{ padding: '20px', textAlign:"center"}}>
         <Othello socket={socket} {...game_info} />
