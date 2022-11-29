@@ -23,8 +23,8 @@ const RoomContainer = ({ socket, room_list }) => {
     <Paper elevation={5} justifyContent="center" style={{ padding: '20px' }}>
       <Box textAlign='center'>
         <ButtonGroup>
-          <Button variant="contained" onClick={createRoom}>방 만들기</Button>
-          <Button variant="contained" onClick={joinAI}>랜덤 AI와 싸우기</Button>
+          <Button variant="contained" onClick={createRoom}>Criar Sala</Button>
+          <Button variant="contained" onClick={joinAI}>Jogar com IA</Button>
         </ButtonGroup>
       </Box>
       <br/>
@@ -32,8 +32,8 @@ const RoomContainer = ({ socket, room_list }) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>상태</TableCell>
-              <TableCell>방id</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>ID</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
