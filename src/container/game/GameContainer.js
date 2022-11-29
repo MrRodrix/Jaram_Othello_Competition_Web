@@ -25,14 +25,14 @@ const GameContainer = ({ socket, room_info, game_info }) => {
   return (
     <div>
       <h1 style={{textAlign: "center"}}>
-        자람 오델로 AI 대전 🏆 
+        Competição de IA's do cursos de Sistema Multiagentes da UFRPE 🏆
       </h1>
       <Paper elevation={5} justifyContent="center" style={{ padding: '20px', textAlign:"center"}}>
         <Othello socket={socket} {...game_info} />
         <br/>
         <RoomInfo socket={socket} {...room_info} turn={game_info.turn}/>
       </Paper>
-      * {room_info.room_id}번 방 {room_info.room_status}
+      * {room_info.room_id}Quarto numero 1 {room_info.room_status}
     </div>
   );
 };

@@ -64,17 +64,17 @@ const Othello = ({ socket, room_id, player, turn, board , placeable}) => {
       <BorderLinearProgress variant="determinate" value={placeable.length>0 ? placeable[1][0]/(placeable[1][0]+placeable[1][1])*100 : "0"} />
       </Grid>
       <Grid container alignItems="center" justifyContent="center" columns={2} style={{fontSize:"2em",fontWeight:"bold"}}>
-        <Grid item xs={1} style={{textAlign:"left"}}> ⚫ 흑돌 {placeable.length > 0 ? placeable[1][0]: ""}</Grid>
-        <Grid item xs={1} style={{textAlign:"right"}}>{placeable.length > 0 ? placeable[1][1]: ""} 백돌 ⚪ </Grid>
+        <Grid item xs={1} style={{textAlign:"left"}}> Pretas ⚫ {placeable.length > 0 ? placeable[1][0]: ""}</Grid>
+        <Grid item xs={1} style={{textAlign:"right"}}>{placeable.length > 0 ? placeable[1][1]: ""} Brancas ⚪</Grid>
       </Grid>
       
         {placeable.length > 0 ?
          placeable[2].length === 0?
           placeable[1][1]===placeable[1][0]?
-          <h1>아쉽게도 무승부</h1>:
+          <h1>Infelizmente Sem Sorteio</h1>:
             placeable[1][1]>placeable[1][0]?
-            <h1>{placeable[1][1]-placeable[1][0]}개의 차이로 백⚪의 승리!</h1>:
-            <h1>{placeable[1][0]-placeable[1][1]}개의 차이로 흑⚫의 승리!</h1>:
+            <h1>{placeable[1][1]-placeable[1][0]}VITORIA DAS ⚪ POR 100!</h1>:
+            <h1>{placeable[1][0]-placeable[1][1]}VITORIA DAS ⚫ POR 100!</h1>:
          ""
         :""}
       

@@ -25,7 +25,7 @@ const RoomInfo = ({ socket, room_id, room_status, player, spectator, turn}) => {
       {player.map(([id,isready], idx) => 
         id===socket.id && isready === 0 ? 
         <Button variant="contained" onClick={() => socket.emit("ready")} endIcon={<CheckCircleOutline/>}>
-          준비하기
+          Preparar
         </Button> : ""
       )}
       <Divider>Player</Divider>
