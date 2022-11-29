@@ -1,9 +1,9 @@
 const production = {
-  API_URL: "http://othello-api.jaram.net/",
+  API_URL: "https://jaram-othello-competition-web.vercel.app/",
 };
 
 const development = {
-  API_URL: "http://othello-api.jaram.net/",
+  API_URL: "https://jaram-othello-competition-web.vercel.app/",
 };
 
 module.exports =
